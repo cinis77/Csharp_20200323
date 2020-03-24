@@ -1,0 +1,6 @@
+C:\Users\User\source\repos\_20200323_trečiasUždavinys\_20200323_trečiasUždavinys\bin\Debug\_20200323_trečiasUždavinys.exe.config
+C:\Users\User\source\repos\_20200323_trečiasUždavinys\_20200323_trečiasUždavinys\bin\Debug\_20200323_trečiasUždavinys.exe
+C:\Users\User\source\repos\_20200323_trečiasUždavinys\_20200323_trečiasUždavinys\bin\Debug\_20200323_trečiasUždavinys.pdb
+C:\Users\User\source\repos\_20200323_trečiasUždavinys\_20200323_trečiasUždavinys\obj\Debug\_20200323_trečiasUždavinys.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\_20200323_trečiasUždavinys\_20200323_trečiasUždavinys\obj\Debug\_20200323_trečiasUždavinys.exe
+C:\Users\User\source\repos\_20200323_trečiasUždavinys\_20200323_trečiasUždavinys\obj\Debug\_20200323_trečiasUždavinys.pdb

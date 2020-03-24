@@ -1,0 +1,7 @@
+C:\Users\User\source\repos\_20200323_LiekanaDalyba\_20200323_LiekanaDalyba\bin\Debug\_20200323_LiekanaDalyba.exe.config
+C:\Users\User\source\repos\_20200323_LiekanaDalyba\_20200323_LiekanaDalyba\bin\Debug\_20200323_LiekanaDalyba.exe
+C:\Users\User\source\repos\_20200323_LiekanaDalyba\_20200323_LiekanaDalyba\bin\Debug\_20200323_LiekanaDalyba.pdb
+C:\Users\User\source\repos\_20200323_LiekanaDalyba\_20200323_LiekanaDalyba\obj\Debug\_20200323_LiekanaDalyba.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\_20200323_LiekanaDalyba\_20200323_LiekanaDalyba\obj\Debug\_20200323_LiekanaDalyba.exe
+C:\Users\User\source\repos\_20200323_LiekanaDalyba\_20200323_LiekanaDalyba\obj\Debug\_20200323_LiekanaDalyba.pdb
+C:\Users\User\source\repos\_20200323_LiekanaDalyba\_20200323_LiekanaDalyba\obj\Debug\_20200323_LiekanaDalyba.csprojAssemblyReference.cache

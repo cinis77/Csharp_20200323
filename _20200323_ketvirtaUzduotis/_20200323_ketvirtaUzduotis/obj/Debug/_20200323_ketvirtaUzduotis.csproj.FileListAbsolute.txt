@@ -1,0 +1,7 @@
+C:\Users\User\source\repos\_20200323_ketvirtaUzduotis\_20200323_ketvirtaUzduotis\bin\Debug\_20200323_ketvirtaUzduotis.exe.config
+C:\Users\User\source\repos\_20200323_ketvirtaUzduotis\_20200323_ketvirtaUzduotis\bin\Debug\_20200323_ketvirtaUzduotis.exe
+C:\Users\User\source\repos\_20200323_ketvirtaUzduotis\_20200323_ketvirtaUzduotis\bin\Debug\_20200323_ketvirtaUzduotis.pdb
+C:\Users\User\source\repos\_20200323_ketvirtaUzduotis\_20200323_ketvirtaUzduotis\obj\Debug\_20200323_ketvirtaUzduotis.csprojAssemblyReference.cache
+C:\Users\User\source\repos\_20200323_ketvirtaUzduotis\_20200323_ketvirtaUzduotis\obj\Debug\_20200323_ketvirtaUzduotis.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\_20200323_ketvirtaUzduotis\_20200323_ketvirtaUzduotis\obj\Debug\_20200323_ketvirtaUzduotis.exe
+C:\Users\User\source\repos\_20200323_ketvirtaUzduotis\_20200323_ketvirtaUzduotis\obj\Debug\_20200323_ketvirtaUzduotis.pdb

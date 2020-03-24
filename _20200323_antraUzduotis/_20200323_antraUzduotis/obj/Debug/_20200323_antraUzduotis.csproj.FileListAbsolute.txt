@@ -1,0 +1,6 @@
+C:\Users\User\source\repos\_20200323_antraUzduotis\_20200323_antraUzduotis\bin\Debug\_20200323_antraUzduotis.exe.config
+C:\Users\User\source\repos\_20200323_antraUzduotis\_20200323_antraUzduotis\bin\Debug\_20200323_antraUzduotis.exe
+C:\Users\User\source\repos\_20200323_antraUzduotis\_20200323_antraUzduotis\bin\Debug\_20200323_antraUzduotis.pdb
+C:\Users\User\source\repos\_20200323_antraUzduotis\_20200323_antraUzduotis\obj\Debug\_20200323_antraUzduotis.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\_20200323_antraUzduotis\_20200323_antraUzduotis\obj\Debug\_20200323_antraUzduotis.exe
+C:\Users\User\source\repos\_20200323_antraUzduotis\_20200323_antraUzduotis\obj\Debug\_20200323_antraUzduotis.pdb
