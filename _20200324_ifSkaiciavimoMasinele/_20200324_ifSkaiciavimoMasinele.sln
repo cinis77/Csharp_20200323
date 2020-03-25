@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_20200324_ifSkaiciavimoMasinele", "_20200324_ifSkaiciavimoMasinele\_20200324_ifSkaiciavimoMasinele.csproj", "{E90C5C0A-07AD-41AE-A82E-8D074F844639}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E90C5C0A-07AD-41AE-A82E-8D074F844639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E90C5C0A-07AD-41AE-A82E-8D074F844639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E90C5C0A-07AD-41AE-A82E-8D074F844639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E90C5C0A-07AD-41AE-A82E-8D074F844639}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98BEB017-FE78-405F-91CE-764ED70357F2}
+	EndGlobalSection
+EndGlobal
