@@ -29,7 +29,7 @@ namespace _20200324_kavosAparatas
                     Console.WriteLine("Jus pasirinkote arbata");
                     break;
                 case "3":
-                    Console.WriteLine("Jus pasirinkote kakava");
+                    Console.WriteLine("Jus pasirinkote kakavą");
                     break;
                 case "4":
                     Console.WriteLine("Jus pasirinkote kava");
