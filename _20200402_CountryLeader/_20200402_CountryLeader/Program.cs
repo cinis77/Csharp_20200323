@@ -35,6 +35,8 @@ namespace _20200402_CountryLeader
                         idLaimetojo = j;
                     }
                 }
+
+                
                 Console.WriteLine("Laimetojas yra: " + kandidatai[idLaimetojo]);
             }
            
