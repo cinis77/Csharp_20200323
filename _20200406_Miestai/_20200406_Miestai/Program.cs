@@ -77,7 +77,9 @@ namespace _20200406_Miestai
 
         private static string[] NusiskaitytiMiestusIsFailo()
         {
+
             System.IO.StreamReader reader = new System.IO.StreamReader("Miestai.txt");
+        
             int kiekis = Convert.ToInt32(reader.ReadLine());
             string[] visiMiestaiSuSalimis = new string[kiekis];
             for (int i = 0; i < kiekis; i++)
