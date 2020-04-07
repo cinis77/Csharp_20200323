@@ -17,7 +17,6 @@ namespace _20200406_AsmensKodas
             {
                 if (!string.IsNullOrEmpty(visisDuomenys[i]))
                 {
-
                     var elementai = visisDuomenys[i].ToCharArray();
                     if (elementai[0] == '3' || elementai[0] == '5')
                     {
