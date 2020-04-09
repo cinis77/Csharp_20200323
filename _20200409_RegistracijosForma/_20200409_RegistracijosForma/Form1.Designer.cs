@@ -155,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 582);
+            this.ClientSize = new System.Drawing.Size(982, 632);
             this.Controls.Add(this.ElektroninisPastasT);
             this.Controls.Add(this.SlaptazodzioInfoL);
             this.Controls.Add(this.SlaptazodisText);
