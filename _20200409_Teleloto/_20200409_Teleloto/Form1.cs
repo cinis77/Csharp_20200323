@@ -55,5 +55,47 @@ namespace _20200409_Teleloto
                 }
             }
         }
+
+        private void ZaidimoSimuliavimas_Click(object sender, EventArgs e)
+        {
+            ZadimoTekstBox.Text = "";
+            Random rng = new Random();
+            int i = 0;
+            List<int> jauIsridentiKamuoliukai = new List<int>();
+
+            while (i < 47)
+            {
+                int kamuoliukas = rng.Next(1, 76);
+                bool naujasKamuoliukas = true;
+                foreach (var item in jauIsridentiKamuoliukai)
+                {
+                    if (item == kamuoliukas)
+                    {
+                        naujasKamuoliukas = false;
+                        break;
+                    }
+                }
+                if (naujasKamuoliukas)
+                {
+                    jauIsridentiKamuoliukai.Add(kamuoliukas);
+                    i++;
+                    ZadimoTekstBox.Text += kamuoliukas + " ";
+                    Braukymas(kamuoliukas);
+                }
+            }
+
+        }
+
+        private void Braukymas(int kamuoliukas)
+        {
+            TextBox[] bilietas = { M1, M2, M3, M4, M5, J1, J2, J3, J4, J5, R1, R2, R3, R4, R5, G1, G2, G3, G4, G5, Z1, Z2, Z3, Z4, Z5 };
+            foreach (var item in bilietas)
+            {
+                if (kamuoliukas.ToString() == item.Text)
+                {
+                    item.BackColor = Color.Green;
+                }
+            }
+        }
     }
 }
