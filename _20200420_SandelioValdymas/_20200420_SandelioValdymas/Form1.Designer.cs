@@ -39,6 +39,8 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.SandelioVaizdas = new System.Windows.Forms.DataGridView();
             this.Pakeisti = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.manoControlas1 = new _20200420_SandelioValdymas.ManoControlas();
             ((System.ComponentModel.ISupportInitialize)(this.SandelioVaizdas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +78,7 @@
             this.label1.Location = new System.Drawing.Point(35, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 25);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 6;
             this.label1.Text = "Id:";
             // 
             // label2
@@ -111,7 +113,7 @@
             this.SaveButton.Location = new System.Drawing.Point(40, 251);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(161, 79);
-            this.SaveButton.TabIndex = 8;
+            this.SaveButton.TabIndex = 4;
             this.SaveButton.Text = "Išsaugoti";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
@@ -132,16 +134,35 @@
             this.Pakeisti.Location = new System.Drawing.Point(238, 251);
             this.Pakeisti.Name = "Pakeisti";
             this.Pakeisti.Size = new System.Drawing.Size(176, 79);
-            this.Pakeisti.TabIndex = 10;
+            this.Pakeisti.TabIndex = 5;
             this.Pakeisti.Text = "Pakeisti";
             this.Pakeisti.UseVisualStyleBackColor = true;
             this.Pakeisti.Click += new System.EventHandler(this.Pakeisti_Click);
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(40, 358);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(161, 80);
+            this.DeleteButton.TabIndex = 10;
+            this.DeleteButton.Text = "Trinti";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // manoControlas1
+            // 
+            this.manoControlas1.Location = new System.Drawing.Point(40, 466);
+            this.manoControlas1.Name = "manoControlas1";
+            this.manoControlas1.Size = new System.Drawing.Size(204, 29);
+            this.manoControlas1.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1522, 903);
+            this.Controls.Add(this.manoControlas1);
+            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.Pakeisti);
             this.Controls.Add(this.SandelioVaizdas);
             this.Controls.Add(this.SaveButton);
@@ -154,7 +175,7 @@
             this.Controls.Add(this.Pavadinimas);
             this.Controls.Add(this.Id);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Sandelio valdymas";
             ((System.ComponentModel.ISupportInitialize)(this.SandelioVaizdas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -174,6 +195,8 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.DataGridView SandelioVaizdas;
         private System.Windows.Forms.Button Pakeisti;
+        private System.Windows.Forms.Button DeleteButton;
+        private ManoControlas manoControlas1;
     }
 }
 

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_20200421_InterfaceRasymas", "_20200421_InterfaceRasymas\_20200421_InterfaceRasymas.csproj", "{8BC133A9-26B4-47DA-ADD4-D2E90314268E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BC133A9-26B4-47DA-ADD4-D2E90314268E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC133A9-26B4-47DA-ADD4-D2E90314268E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC133A9-26B4-47DA-ADD4-D2E90314268E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC133A9-26B4-47DA-ADD4-D2E90314268E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BE291B2-E64A-48A7-9F55-AB14A64240B0}
+	EndGlobalSection
+EndGlobal

@@ -19,6 +19,8 @@ namespace _20200420_SandelioValdymas
             InitializeComponent();
             VisosPrekes = new List<Preke>();
             LoadPrekes();
+
+            manoControlas1.Metodas();
         }
 
         private void LoadPrekes()
@@ -98,6 +100,26 @@ namespace _20200420_SandelioValdymas
             }
             writer.Close();
             RefreshView();
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Ar tikrai norite ištrinti?", "Trinti", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Preke istrintiPreke = null;
+                foreach (var item in VisosPrekes)
+                {
+                    if (item.ID == int.Parse(Id.Text))
+                    {
+                        istrintiPreke = item;
+                    }
+                }
+                VisosPrekes.Remove(istrintiPreke);
+                PerrasytiFaila();
+                
+                
+            }
         }
     }
 }
