@@ -45,19 +45,26 @@ namespace _20200428_Galerija
             {
                 if (item.Extension == ".jpg" || item.Extension == ".jpeg" || item.Extension == ".png")
                 {
-                    TabPage page = new TabPage();
-                    page.BackgroundImage = Image.FromFile(item.FullName);
-                    page.BackgroundImageLayout = ImageLayout.Stretch;
-                    page.Text = (++i).ToString();
-                    Galerija.TabPages.Add(page);
-                    PaveiksliukoInfromacija infor = new PaveiksliukoInfromacija();
-                    infor.Pavadinimas = item.Name.TrimEnd(item.Extension.ToCharArray());
-                    infor.Pletinys = item.Extension;
-                    infor.SaugojamasFolderis = info.FullName;
-                    InformacijosZodynas.Add(page, infor);
+                    using (Bitmap img = new Bitmap(item.FullName))
+                    {
+                        TabPage page = new TabPage();
+                        page.Text = (++i).ToString();
+                        Galerija.TabPages.Add(page);
+                        page.BackgroundImage = (Image)img.Clone();
+                        page.BackgroundImageLayout = ImageLayout.Stretch;
+
+                        PaveiksliukoInfromacija infor = new PaveiksliukoInfromacija();
+                        infor.Pavadinimas = item.Name.TrimEnd(item.Extension.ToCharArray());
+                        infor.Pletinys = item.Extension;
+                        infor.SaugojamasFolderis = info.FullName;
+                        InformacijosZodynas.Add(page, infor);
+                    }
+
+                    
                 }
             }
-
+            Galerija.SelectedIndex = 1;
+            Galerija.SelectedIndex = 0;
         }
 
         private void Galerija_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,21 +82,22 @@ namespace _20200428_Galerija
 
             string trynimoKelias = InformacijosZodynas[Galerija.SelectedTab].SaugojamasFolderis + @"\"
             + InformacijosZodynas[Galerija.SelectedTab].Pavadinimas + InformacijosZodynas[Galerija.SelectedTab].Pletinys;
-            Bitmap bitmap = (Bitmap)Galerija.SelectedTab.BackgroundImage;
-            string saugojimoKelias = InformacijosZodynas[Galerija.SelectedTab].SaugojamasFolderis + PavadinimasTextBox.Text + PletinysTextBox.Text;
-            bitmap.Save(saugojimoKelias);
+            
+            //Bitmap bitmap = (Bitmap)Galerija.SelectedTab.BackgroundImage;
+            string saugojimoKelias = InformacijosZodynas[Galerija.SelectedTab].SaugojamasFolderis + @"\"  + PavadinimasTextBox.Text + PletinysTextBox.Text;
+            //bitmap.Save(saugojimoKelias);
             InformacijosZodynas[Galerija.SelectedTab].Pavadinimas = PavadinimasTextBox.Text;
             string folderioKelias = InformacijosZodynas[Galerija.SelectedTab].SaugojamasFolderis;
             while (Galerija.TabPages.Count > 0)
             {
                 Galerija.TabPages.Remove(Galerija.TabPages[0]);
             }
-            
             InformacijosZodynas.Clear();
             GC.Collect();
             GC.Collect();
             GC.Collect();
-            System.IO.File.Delete(trynimoKelias);
+            System.Threading.Thread.Sleep(5000);
+            System.IO.File.Move(trynimoKelias, saugojimoKelias);
             UzkratuVisasNuotraukasFolderyje(folderioKelias);
         }
     }
