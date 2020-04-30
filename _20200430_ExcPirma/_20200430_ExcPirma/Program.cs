@@ -41,33 +41,37 @@ namespace _20200430_ExcPirma
         static void Main(string[] args)
         {
             KlaidomsTikrintiKlase klase = new KlaidomsTikrintiKlase();
-
-            try
+            bool ok = false;
+            while (!ok)
             {
-                klase.SkaiciaiStringMasyve("123");
-                klase.ZodisBeSkaiciu("asdf2");
+                try
+                {
+                    Console.WriteLine("Iveskite teksta");
+                    string tekstas = Console.ReadLine();
+                    klase.SkaiciaiStringMasyve(tekstas);
+                    ok = true;
+                    klase.ZodisBeSkaiciu("asdf2");
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine("Gauta klaida");
+                    Console.WriteLine("Skaiciuose yra tekstiniu elementu");
+                }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                catch (DivideByZeroException ex)
+                {
+                    Console.WriteLine("Dalyba iss 0 negalima");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Nenumatyta klaida");
+                    Console.WriteLine(ex.GetType());
+                    Console.WriteLine(ex.Message);
+                }
             }
-            catch (FormatException ex)
-            {
-     
-                Console.WriteLine("Gauta klaida");
-                Console.WriteLine("Skaiciuose yra tekstiniu elementu");
-            }
-            catch(ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            catch(DivideByZeroException ex)
-            {
-                Console.WriteLine("Dalyba iss 0 negalima");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Nenumatyta klaida");
-                Console.WriteLine(ex.GetType());
-                Console.WriteLine(ex.Message);
-            }
-            
         }
     }
 }
