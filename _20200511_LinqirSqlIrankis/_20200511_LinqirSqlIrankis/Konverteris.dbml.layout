@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Konverteris">
+  <DataContextMoniker Name="/KonverterisDataContext" />
+  <nestedChildShapes>
+    <classShape Id="042866e2-d414-4490-8ee6-cd9eeef1c370" absoluteBounds="5.25, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/KonverterisDataContext/Vartotojai" />
+      <nestedChildShapes>
+        <elementListCompartment Id="66d314da-a264-47fd-a4e3-0b88c0f7ee3a" absoluteBounds="5.265, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aaf6adca-3784-4a52-be6c-2eb01e6b3120" absoluteBounds="8, 2, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/KonverterisDataContext/Adresai" />
+      <nestedChildShapes>
+        <elementListCompartment Id="405bf954-00a8-4e40-8a1a-377aa0cea3ac" absoluteBounds="8.015, 2.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.25 : 1.19314697265625); (9 : 1.19314697265625); (9 : 2)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KonverterisDataContext/Vartotojai/Vartotojai_Adresai" />
+      <nodes>
+        <classShapeMoniker Id="042866e2-d414-4490-8ee6-cd9eeef1c370" />
+        <classShapeMoniker Id="aaf6adca-3784-4a52-be6c-2eb01e6b3120" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="21b58887-47ae-4859-a295-952552036294" absoluteBounds="2.375, 2.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/KonverterisDataContext/Preke" />
+      <nestedChildShapes>
+        <elementListCompartment Id="57df312d-6a4c-41f7-aeb9-1898d4032a89" absoluteBounds="2.39, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.25 : 1.19314697265625); (3.375 : 1.19314697265625); (3.375 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KonverterisDataContext/Vartotojai/Vartotojai_Preke" />
+      <nodes>
+        <classShapeMoniker Id="042866e2-d414-4490-8ee6-cd9eeef1c370" />
+        <classShapeMoniker Id="21b58887-47ae-4859-a295-952552036294" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

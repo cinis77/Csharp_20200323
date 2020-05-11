@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DuomenuBaze" Class="KonverterisDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DuomenuBaze.mdf;Integrated Security=True" SettingsObjectName="_20200511_LinqirSqlIrankis.Properties.Settings" SettingsPropertyName="DuomenuBazeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Vartotojai" Member="Vartotojais">
+    <Type Name="Vartotojai">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Vardas" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Pavarde" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Vartotojai_Adresai" Member="Adresais" ThisKey="Id" OtherKey="VartotojoId" Type="Adresai" />
+      <Association Name="Vartotojai_Preke" Member="Prekes" ThisKey="Id" OtherKey="Vartotojas" Type="Preke" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Adresai" Member="Adresais">
+    <Type Name="Adresai">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Adresas" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PastoKodas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NamoNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VartotojoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Vartotojai_Adresai" Member="Vartotojai" ThisKey="VartotojoId" OtherKey="Id" Type="Vartotojai" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Prekes" Member="Prekes">
+    <Type Name="Preke">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Vardas" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Kaina" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Vartotojas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Vartotojai_Preke" Member="Vartotojai" ThisKey="Vartotojas" OtherKey="Id" Type="Vartotojai" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
