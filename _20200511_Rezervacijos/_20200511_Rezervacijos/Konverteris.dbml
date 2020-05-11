@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DuomenuBaze" Class="KonverterisDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DuomenuBaze.mdf;Integrated Security=True" SettingsObjectName="_20200511_Rezervacijos.Properties.Settings" SettingsPropertyName="DuomenuBazeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Kambariai" Member="Kambariais">
+    <Type Name="Kambariai">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Numeris" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Kaina" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="LovuSkaicius" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Kambariai_Rezervacija" Member="Rezervacijas" ThisKey="Id" OtherKey="KambarioId" Type="Rezervacija" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rezervacija" Member="Rezervacijas">
+    <Type Name="Rezervacija">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KlientoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KambarioId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Pradzia" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Pabaiga" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Kambariai_Rezervacija" Member="Kambariai" ThisKey="KambarioId" OtherKey="Id" Type="Kambariai" IsForeignKey="true" />
+      <Association Name="Vartotojai_Rezervacija" Member="Vartotojai" ThisKey="KlientoId" OtherKey="Id" Type="Vartotojai" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vartotojai" Member="Vartotojais">
+    <Type Name="Vartotojai">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Vardas" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Pavarde" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Vartotojai_Rezervacija" Member="Rezervacijas" ThisKey="Id" OtherKey="KlientoId" Type="Rezervacija" />
+    </Type>
+  </Table>
+</Database>
