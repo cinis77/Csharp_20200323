@@ -33,6 +33,7 @@
             this.Pradzia = new System.Windows.Forms.DateTimePicker();
             this.Pabaiga = new System.Windows.Forms.DateTimePicker();
             this.Rezervuoti = new System.Windows.Forms.Button();
+            this.RezRodymas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GalimiRezervuotiKambariai)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +63,7 @@
             this.Pradzia.Name = "Pradzia";
             this.Pradzia.Size = new System.Drawing.Size(200, 29);
             this.Pradzia.TabIndex = 2;
+            this.Pradzia.ValueChanged += new System.EventHandler(this.Pradzia_ValueChanged);
             // 
             // Pabaiga
             // 
@@ -69,6 +71,7 @@
             this.Pabaiga.Name = "Pabaiga";
             this.Pabaiga.Size = new System.Drawing.Size(200, 29);
             this.Pabaiga.TabIndex = 3;
+            this.Pabaiga.ValueChanged += new System.EventHandler(this.Pradzia_ValueChanged);
             // 
             // Rezervuoti
             // 
@@ -80,11 +83,22 @@
             this.Rezervuoti.UseVisualStyleBackColor = true;
             this.Rezervuoti.Click += new System.EventHandler(this.Rezervuoti_Click);
             // 
+            // RezRodymas
+            // 
+            this.RezRodymas.Location = new System.Drawing.Point(52, 402);
+            this.RezRodymas.Name = "RezRodymas";
+            this.RezRodymas.Size = new System.Drawing.Size(132, 81);
+            this.RezRodymas.TabIndex = 5;
+            this.RezRodymas.Text = "Rodyti visas rezervacijas";
+            this.RezRodymas.UseVisualStyleBackColor = true;
+            this.RezRodymas.Click += new System.EventHandler(this.RezRodymas_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1479, 792);
+            this.Controls.Add(this.RezRodymas);
             this.Controls.Add(this.Rezervuoti);
             this.Controls.Add(this.Pabaiga);
             this.Controls.Add(this.Pradzia);
@@ -105,6 +119,7 @@
         private System.Windows.Forms.DateTimePicker Pradzia;
         private System.Windows.Forms.DateTimePicker Pabaiga;
         private System.Windows.Forms.Button Rezervuoti;
+        private System.Windows.Forms.Button RezRodymas;
     }
 }
 

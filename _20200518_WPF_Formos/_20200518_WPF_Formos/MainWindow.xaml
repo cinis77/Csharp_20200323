@@ -1,0 +1,35 @@
+﻿<Window x:Class="_20200518_WPF_Formos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_20200518_WPF_Formos"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button
+  Style="{DynamicResource ButtonStyle1}"
+  ToolTip="Cia paaiskinimas apie elementa" Margin="695,320,0,0" Width="56" Height="56" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <materialDesign:PackIcon
+    Kind="FacebookMessenger"
+    Height="24"
+    Width="24" />
+        </Button>
+        <TextBox Margin="100, 100, 0, 0" Width="100" Height="24" materialDesign:HintAssist.Hint="UserName"></TextBox>
+        <Button x:Name="Mygtukas1" Margin="44,55,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Mygtukas" Click="Mygtukas1_Click"></Button>
+        <TextBox Margin="0, 55, 10, 0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Height="24" Text="KA norime" TextAlignment="Right" FontFamily="Arial" BorderBrush="#FF1D49CE" SelectionBrush="#FFEBD30C"></TextBox>
+        <TextBox
+    Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+    Margin="21,120,0,0"
+    VerticalAlignment="Top"
+    Height="55"
+    AcceptsReturn="True"
+    TextWrapping="Wrap"
+    VerticalScrollBarVisibility="Auto"
+    materialDesign:HintAssist.Hint="Kliento adresas"
+   HorizontalAlignment="Left" Width="169" />
+
+
+    </Grid>
+</Window>

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0DDCA12E-7603-4436-B131-3D627B710178}</ProjectGuid>
+    <ProjectGuid>{3F67E5D1-3306-4F9C-8942-08FDAAAE97BE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>_20200511_Rezervacijos</RootNamespace>
-    <AssemblyName>_20200511_Rezervacijos</AssemblyName>
+    <RootNamespace>_20200512_ProjektasSuDuomenimis</RootNamespace>
+    <AssemblyName>_20200512_ProjektasSuDuomenimis</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,9 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
-    </Reference>
+    <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
@@ -111,12 +109,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DuomenuBaze.mdf">
+    <Content Include="RobotDataBase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DuomenuBaze_log.ldf">
+    <Content Include="RobotDataBase_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DuomenuBaze.mdf</DependentUpon>
+      <DependentUpon>RobotDataBase.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>

@@ -30,15 +30,15 @@ namespace _20200511_Rezervacijos
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertKambariai(Kambariai instance);
-    partial void UpdateKambariai(Kambariai instance);
-    partial void DeleteKambariai(Kambariai instance);
     partial void InsertRezervacija(Rezervacija instance);
     partial void UpdateRezervacija(Rezervacija instance);
     partial void DeleteRezervacija(Rezervacija instance);
     partial void InsertVartotojai(Vartotojai instance);
     partial void UpdateVartotojai(Vartotojai instance);
     partial void DeleteVartotojai(Vartotojai instance);
+    partial void InsertKambariai(Kambariai instance);
+    partial void UpdateKambariai(Kambariai instance);
+    partial void DeleteKambariai(Kambariai instance);
     #endregion
 		
 		public KonverterisDataContext() : 
@@ -71,14 +71,6 @@ namespace _20200511_Rezervacijos
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Kambariai> Kambariais
-		{
-			get
-			{
-				return this.GetTable<Kambariai>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Rezervacija> Rezervacijas
 		{
 			get
@@ -93,6 +85,392 @@ namespace _20200511_Rezervacijos
 			{
 				return this.GetTable<Vartotojai>();
 			}
+		}
+		
+		public System.Data.Linq.Table<Kambariai> Kambariais
+		{
+			get
+			{
+				return this.GetTable<Kambariai>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Rezervacija")]
+	public partial class Rezervacija : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _KlientoId;
+		
+		private int _KambarioId;
+		
+		private System.Nullable<System.DateTime> _Pradzia;
+		
+		private System.Nullable<System.DateTime> _Pabaiga;
+		
+		private EntityRef<Vartotojai> _Vartotojai;
+		
+		private EntityRef<Kambariai> _Kambariai;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnKlientoIdChanging(int value);
+    partial void OnKlientoIdChanged();
+    partial void OnKambarioIdChanging(int value);
+    partial void OnKambarioIdChanged();
+    partial void OnPradziaChanging(System.Nullable<System.DateTime> value);
+    partial void OnPradziaChanged();
+    partial void OnPabaigaChanging(System.Nullable<System.DateTime> value);
+    partial void OnPabaigaChanged();
+    #endregion
+		
+		public Rezervacija()
+		{
+			this._Vartotojai = default(EntityRef<Vartotojai>);
+			this._Kambariai = default(EntityRef<Kambariai>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KlientoId", DbType="Int NOT NULL")]
+		public int KlientoId
+		{
+			get
+			{
+				return this._KlientoId;
+			}
+			set
+			{
+				if ((this._KlientoId != value))
+				{
+					if (this._Vartotojai.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnKlientoIdChanging(value);
+					this.SendPropertyChanging();
+					this._KlientoId = value;
+					this.SendPropertyChanged("KlientoId");
+					this.OnKlientoIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KambarioId", DbType="Int NOT NULL")]
+		public int KambarioId
+		{
+			get
+			{
+				return this._KambarioId;
+			}
+			set
+			{
+				if ((this._KambarioId != value))
+				{
+					if (this._Kambariai.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnKambarioIdChanging(value);
+					this.SendPropertyChanging();
+					this._KambarioId = value;
+					this.SendPropertyChanged("KambarioId");
+					this.OnKambarioIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pradzia", DbType="Date")]
+		public System.Nullable<System.DateTime> Pradzia
+		{
+			get
+			{
+				return this._Pradzia;
+			}
+			set
+			{
+				if ((this._Pradzia != value))
+				{
+					this.OnPradziaChanging(value);
+					this.SendPropertyChanging();
+					this._Pradzia = value;
+					this.SendPropertyChanged("Pradzia");
+					this.OnPradziaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pabaiga", DbType="Date")]
+		public System.Nullable<System.DateTime> Pabaiga
+		{
+			get
+			{
+				return this._Pabaiga;
+			}
+			set
+			{
+				if ((this._Pabaiga != value))
+				{
+					this.OnPabaigaChanging(value);
+					this.SendPropertyChanging();
+					this._Pabaiga = value;
+					this.SendPropertyChanged("Pabaiga");
+					this.OnPabaigaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Vartotojai_Rezervacija", Storage="_Vartotojai", ThisKey="KlientoId", OtherKey="Id", IsForeignKey=true)]
+		public Vartotojai Vartotojai
+		{
+			get
+			{
+				return this._Vartotojai.Entity;
+			}
+			set
+			{
+				Vartotojai previousValue = this._Vartotojai.Entity;
+				if (((previousValue != value) 
+							|| (this._Vartotojai.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Vartotojai.Entity = null;
+						previousValue.Rezervacijas.Remove(this);
+					}
+					this._Vartotojai.Entity = value;
+					if ((value != null))
+					{
+						value.Rezervacijas.Add(this);
+						this._KlientoId = value.Id;
+					}
+					else
+					{
+						this._KlientoId = default(int);
+					}
+					this.SendPropertyChanged("Vartotojai");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Kambariai_Rezervacija", Storage="_Kambariai", ThisKey="KambarioId", OtherKey="Id", IsForeignKey=true)]
+		public Kambariai Kambariai
+		{
+			get
+			{
+				return this._Kambariai.Entity;
+			}
+			set
+			{
+				Kambariai previousValue = this._Kambariai.Entity;
+				if (((previousValue != value) 
+							|| (this._Kambariai.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Kambariai.Entity = null;
+						previousValue.Rezervacijas.Remove(this);
+					}
+					this._Kambariai.Entity = value;
+					if ((value != null))
+					{
+						value.Rezervacijas.Add(this);
+						this._KambarioId = value.Id;
+					}
+					else
+					{
+						this._KambarioId = default(int);
+					}
+					this.SendPropertyChanged("Kambariai");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Vartotojai")]
+	public partial class Vartotojai : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Vardas;
+		
+		private string _Pavarde;
+		
+		private EntitySet<Rezervacija> _Rezervacijas;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnVardasChanging(string value);
+    partial void OnVardasChanged();
+    partial void OnPavardeChanging(string value);
+    partial void OnPavardeChanged();
+    #endregion
+		
+		public Vartotojai()
+		{
+			this._Rezervacijas = new EntitySet<Rezervacija>(new Action<Rezervacija>(this.attach_Rezervacijas), new Action<Rezervacija>(this.detach_Rezervacijas));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vardas", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string Vardas
+		{
+			get
+			{
+				return this._Vardas;
+			}
+			set
+			{
+				if ((this._Vardas != value))
+				{
+					this.OnVardasChanging(value);
+					this.SendPropertyChanging();
+					this._Vardas = value;
+					this.SendPropertyChanged("Vardas");
+					this.OnVardasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pavarde", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string Pavarde
+		{
+			get
+			{
+				return this._Pavarde;
+			}
+			set
+			{
+				if ((this._Pavarde != value))
+				{
+					this.OnPavardeChanging(value);
+					this.SendPropertyChanging();
+					this._Pavarde = value;
+					this.SendPropertyChanged("Pavarde");
+					this.OnPavardeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Vartotojai_Rezervacija", Storage="_Rezervacijas", ThisKey="Id", OtherKey="KlientoId")]
+		public EntitySet<Rezervacija> Rezervacijas
+		{
+			get
+			{
+				return this._Rezervacijas;
+			}
+			set
+			{
+				this._Rezervacijas.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Rezervacijas(Rezervacija entity)
+		{
+			this.SendPropertyChanging();
+			entity.Vartotojai = this;
+		}
+		
+		private void detach_Rezervacijas(Rezervacija entity)
+		{
+			this.SendPropertyChanging();
+			entity.Vartotojai = null;
 		}
 	}
 	
@@ -255,384 +633,6 @@ namespace _20200511_Rezervacijos
 		{
 			this.SendPropertyChanging();
 			entity.Kambariai = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Rezervacija")]
-	public partial class Rezervacija : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private int _KlientoId;
-		
-		private int _KambarioId;
-		
-		private System.Nullable<System.DateTime> _Pradzia;
-		
-		private System.Nullable<System.DateTime> _Pabaiga;
-		
-		private EntityRef<Kambariai> _Kambariai;
-		
-		private EntityRef<Vartotojai> _Vartotojai;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnKlientoIdChanging(int value);
-    partial void OnKlientoIdChanged();
-    partial void OnKambarioIdChanging(int value);
-    partial void OnKambarioIdChanged();
-    partial void OnPradziaChanging(System.Nullable<System.DateTime> value);
-    partial void OnPradziaChanged();
-    partial void OnPabaigaChanging(System.Nullable<System.DateTime> value);
-    partial void OnPabaigaChanged();
-    #endregion
-		
-		public Rezervacija()
-		{
-			this._Kambariai = default(EntityRef<Kambariai>);
-			this._Vartotojai = default(EntityRef<Vartotojai>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KlientoId", DbType="Int NOT NULL")]
-		public int KlientoId
-		{
-			get
-			{
-				return this._KlientoId;
-			}
-			set
-			{
-				if ((this._KlientoId != value))
-				{
-					if (this._Vartotojai.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnKlientoIdChanging(value);
-					this.SendPropertyChanging();
-					this._KlientoId = value;
-					this.SendPropertyChanged("KlientoId");
-					this.OnKlientoIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KambarioId", DbType="Int NOT NULL")]
-		public int KambarioId
-		{
-			get
-			{
-				return this._KambarioId;
-			}
-			set
-			{
-				if ((this._KambarioId != value))
-				{
-					if (this._Kambariai.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnKambarioIdChanging(value);
-					this.SendPropertyChanging();
-					this._KambarioId = value;
-					this.SendPropertyChanged("KambarioId");
-					this.OnKambarioIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pradzia", DbType="Date")]
-		public System.Nullable<System.DateTime> Pradzia
-		{
-			get
-			{
-				return this._Pradzia;
-			}
-			set
-			{
-				if ((this._Pradzia != value))
-				{
-					this.OnPradziaChanging(value);
-					this.SendPropertyChanging();
-					this._Pradzia = value;
-					this.SendPropertyChanged("Pradzia");
-					this.OnPradziaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pabaiga", DbType="Date")]
-		public System.Nullable<System.DateTime> Pabaiga
-		{
-			get
-			{
-				return this._Pabaiga;
-			}
-			set
-			{
-				if ((this._Pabaiga != value))
-				{
-					this.OnPabaigaChanging(value);
-					this.SendPropertyChanging();
-					this._Pabaiga = value;
-					this.SendPropertyChanged("Pabaiga");
-					this.OnPabaigaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Kambariai_Rezervacija", Storage="_Kambariai", ThisKey="KambarioId", OtherKey="Id", IsForeignKey=true)]
-		public Kambariai Kambariai
-		{
-			get
-			{
-				return this._Kambariai.Entity;
-			}
-			set
-			{
-				Kambariai previousValue = this._Kambariai.Entity;
-				if (((previousValue != value) 
-							|| (this._Kambariai.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Kambariai.Entity = null;
-						previousValue.Rezervacijas.Remove(this);
-					}
-					this._Kambariai.Entity = value;
-					if ((value != null))
-					{
-						value.Rezervacijas.Add(this);
-						this._KambarioId = value.Id;
-					}
-					else
-					{
-						this._KambarioId = default(int);
-					}
-					this.SendPropertyChanged("Kambariai");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Vartotojai_Rezervacija", Storage="_Vartotojai", ThisKey="KlientoId", OtherKey="Id", IsForeignKey=true)]
-		public Vartotojai Vartotojai
-		{
-			get
-			{
-				return this._Vartotojai.Entity;
-			}
-			set
-			{
-				Vartotojai previousValue = this._Vartotojai.Entity;
-				if (((previousValue != value) 
-							|| (this._Vartotojai.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Vartotojai.Entity = null;
-						previousValue.Rezervacijas.Remove(this);
-					}
-					this._Vartotojai.Entity = value;
-					if ((value != null))
-					{
-						value.Rezervacijas.Add(this);
-						this._KlientoId = value.Id;
-					}
-					else
-					{
-						this._KlientoId = default(int);
-					}
-					this.SendPropertyChanged("Vartotojai");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Vartotojai")]
-	public partial class Vartotojai : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _Vardas;
-		
-		private string _Pavarde;
-		
-		private EntitySet<Rezervacija> _Rezervacijas;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnVardasChanging(string value);
-    partial void OnVardasChanged();
-    partial void OnPavardeChanging(string value);
-    partial void OnPavardeChanged();
-    #endregion
-		
-		public Vartotojai()
-		{
-			this._Rezervacijas = new EntitySet<Rezervacija>(new Action<Rezervacija>(this.attach_Rezervacijas), new Action<Rezervacija>(this.detach_Rezervacijas));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vardas", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string Vardas
-		{
-			get
-			{
-				return this._Vardas;
-			}
-			set
-			{
-				if ((this._Vardas != value))
-				{
-					this.OnVardasChanging(value);
-					this.SendPropertyChanging();
-					this._Vardas = value;
-					this.SendPropertyChanged("Vardas");
-					this.OnVardasChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pavarde", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string Pavarde
-		{
-			get
-			{
-				return this._Pavarde;
-			}
-			set
-			{
-				if ((this._Pavarde != value))
-				{
-					this.OnPavardeChanging(value);
-					this.SendPropertyChanging();
-					this._Pavarde = value;
-					this.SendPropertyChanged("Pavarde");
-					this.OnPavardeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Vartotojai_Rezervacija", Storage="_Rezervacijas", ThisKey="Id", OtherKey="KlientoId")]
-		public EntitySet<Rezervacija> Rezervacijas
-		{
-			get
-			{
-				return this._Rezervacijas;
-			}
-			set
-			{
-				this._Rezervacijas.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Rezervacijas(Rezervacija entity)
-		{
-			this.SendPropertyChanging();
-			entity.Vartotojai = this;
-		}
-		
-		private void detach_Rezervacijas(Rezervacija entity)
-		{
-			this.SendPropertyChanging();
-			entity.Vartotojai = null;
 		}
 	}
 }

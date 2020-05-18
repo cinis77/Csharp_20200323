@@ -53,5 +53,48 @@ namespace _20200511_Rezervacijos
         {
             KambarioID = (int)GalimiRezervuotiKambariai.Rows[e.RowIndex].Cells[0].Value;
         }
+
+        private void Pradzia_ValueChanged(object sender, EventArgs e)
+        {
+            if (Pradzia.Value.Date < Pabaiga.Value.Date)
+            {
+                DataContext db = new DataContext(ConnectionString);
+                var rezevacijas = db.GetTable<Rezervacija>().
+                    Where(x => !((Pradzia.Value.Date < x.Pradzia && Pabaiga.Value.Date < x.Pradzia) ||
+                    (Pradzia.Value.Date > x.Pabaiga && Pabaiga.Value.Date > x.Pradzia)));
+                var kambariai = db.GetTable<Kambariai>().ToList();
+                foreach (var item in rezevacijas)
+                {
+                    if (kambariai.Contains(item.Kambariai))
+                    {
+                        kambariai.Remove(item.Kambariai);
+                    }
+                }
+
+                GalimiRezervuotiKambariai.DataSource = kambariai;
+            }
+            else
+            {
+                MessageBox.Show("Netinkamai parinkta pabaigos data");
+            }
+        }
+
+        private void RezRodymas_Click(object sender, EventArgs e)
+        {
+            DataContext db = new DataContext(ConnectionString);
+            GalimiRezervuotiKambariai.DataSource = db.GetTable<Rezervacija>().Select(x=> 
+            new 
+            {   x.Vartotojai.Vardas,
+                x.Vartotojai.Pavarde, 
+                x.Kambariai.Numeris,
+                x.Kambariai.Kaina,
+                x.Pradzia, 
+                x.Pabaiga
+            });
+
+            GalimiRezervuotiKambariai.CellClick -= GalimiRezervuotiKambariai_CellContentClick;
+            GalimiRezervuotiKambariai.CellContentClick -= GalimiRezervuotiKambariai_CellContentClick;
+            Rezervuoti.Enabled = false;
+        }
     }
 }
